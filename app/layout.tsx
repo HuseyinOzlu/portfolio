@@ -2,6 +2,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { raleway } from './lib/fonts'
 import { sharedMetaData } from '@/shared-metadata'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 export const metadata: Metadata = {
@@ -15,7 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={'${raleway.className} flex min-h-screen'}>{children}</body>
+      <body 
+        className={`${raleway.className} min-h-screen flex flex-col flex-1`}
+        >
+          <Header />
+          <div className='background'>
+          <div className='gradient-blur'/>
+        </div>
+        {children}
+        <Footer />
+        </body>
     </html>
   )
 }
