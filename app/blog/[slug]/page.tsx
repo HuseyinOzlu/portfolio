@@ -25,5 +25,5 @@ export default function BlogPost({ params } : {params: {slug: string} }) {
             </h1>
             <Mdx code={post.body.code}/>
         </article>
-    );
+    ); 
 }

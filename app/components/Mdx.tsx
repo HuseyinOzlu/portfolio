@@ -1,9 +1,11 @@
 import { useMDXComponent } from "next-contentlayer/hooks"
 import RoundedImage from "./RoundedImage"
+import CustomLink from "./CustomLink"
 
 
 const components = {
-    Image: RoundedImage
+    Image: RoundedImage,
+    a: CustomLink,
 }
 
 type MdxProps = {
@@ -16,7 +18,6 @@ export default function Mdx({ code }: MdxProps) {
     const Component = useMDXComponent(code)
     return (
         <div className="prose prose-pink">
-            {/* // TODO: 1:51:51// */}
             <Component components={components}/>
         </div>
     )
